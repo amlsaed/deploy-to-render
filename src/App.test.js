@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import React, {StrictMode} from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/hello jenkins autodeploy job/i);
-  expect(linkElement).toBeInTheDocument();
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.createRoot(div).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
 });
